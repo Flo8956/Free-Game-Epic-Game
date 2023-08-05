@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jeux Gratuit Epic Games</title>
+    <link rel="shortcut icon" href="Logo.png">
+    <link rel="stylesheet" href="Index.css">
+</head>
+<div id="bandeHaut"></div>
+<body>
+    <h1>Les jeux gratuits de l'Epic Games Store</h1>
+    <h2>Jeux gratuits actuels :</h2>
+    <p id="currentGamesParagraph"></p>
+    <h2>Jeux gratuits à venir :</h2>
+    <p id="upcomingGamesParagraph"></p>
+     <script>
+        async function fetchCurrentFreeGames() {
+            const url = 'https://free-epic-games.p.rapidapi.com/free';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'abd033d9e5mshe56330758835001p1b821ajsn16759326bb3a',
+                    'X-RapidAPI-Host': 'free-epic-games.p.rapidapi.com'
+                }
+            };
+            try {
+                const response = await fetch(url, options);
+                const gamesData = await response.json();
+                const currentFreeGameTitles = gamesData.freeGames.current.map(game => game.title);
+                const currentGamesParagraph = document.getElementById('currentGamesParagraph');
+                const currentGamesText = currentFreeGameTitles.join(', ');
+                currentGamesParagraph.textContent = currentGamesText;
+                const upcomingFreeGameTitles = gamesData.freeGames.upcoming.map(game => game.title);
+                const upcomingGamesParagraph = document.getElementById('upcomingGamesParagraph');
+                const upcomingGamesText = upcomingFreeGameTitles.join(', ');
+                upcomingGamesParagraph.textContent = upcomingGamesText;
+
+            } catch (error) {
+                alert("Nombre Maximum de demande atteint")
+            }
+        }
+        fetchCurrentFreeGames();
+    </script>
+</body>
+</html>
+</script>
+</body>
+</html>

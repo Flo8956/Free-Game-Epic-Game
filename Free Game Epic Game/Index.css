@@ -1,0 +1,38 @@
+
+body
+{
+background-color: rgb(3, 8, 68);
+margin: 0%;
+}
+#bandeHaut
+{
+    width: 100%;
+    height:68px;
+    background:#000000;
+}
+
+h1
+{
+    text-align: center;
+    color:rgb(255, 255, 255);
+    font-family: Verdana;
+}
+#currentGamesParagraph
+{
+    text-align: center;
+    color:rgb(255, 255, 255);
+    font-family: Verdana;
+    font-size: large;
+}
+h2
+{
+    color:rgb(255, 255, 255);
+    font-family: Verdana;
+}
+#upcomingGamesParagraph
+{
+    text-align: center;
+    color:rgb(255, 255, 255);
+    font-family: Verdana;
+    font-size: large;
+}
